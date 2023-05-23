@@ -17,14 +17,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_23_063552) do
     t.string "surname"
     t.string "patronymic"
     t.integer "phone_number", null: false
-    t.integer "role"
+    t.integer "role", default: 0, null: false
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "remember_toker_digest"
     t.string "remember_token_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["phone_number"], name: "index_users_on_phone_number", unique: true
+    t.index ["role"], name: "index_users_on_role"
   end
 
 end

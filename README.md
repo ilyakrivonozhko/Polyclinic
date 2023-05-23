@@ -1,11 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby 3.2.2
 
-Things you may want to cover:
-
-* Ruby version
+* Rails 7.0.4
 
 * System dependencies
 
@@ -21,4 +18,22 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+TODO:
+
+* Loading users from a file
+
+* Translating to russian
+
+* Ability to create users from the admin panel
+
+* Docker
+
+* Pagination
+
+* Обработка ошибок(404, нет доступа)
+
+* Группа "Сотрудник регистратуры"
+
+* Поиск по пользователям
+
+* Уведомления пациентов об отмене приёма по почте
