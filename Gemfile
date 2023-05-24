@@ -49,6 +49,8 @@ gem 'caxlsx_rails', '~> 0.6'
 gem 'rubyXL', '~> 3.4'
 gem 'activerecord-import', '~> 1.2'
 
+gem 'pundit', '~> 2.1'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

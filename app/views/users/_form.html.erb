@@ -50,6 +50,8 @@
         <%= f.text_field :phone_number, placeholder: 'Phone number', class: 'form-control form-control-lg' %>
         </div>
     </div>
+    
+    <% unless @user.new_record? %>
 
     <div class="mb-3 row">
         <div class="col-sm-2 col-form-label">
@@ -62,7 +64,6 @@
         </div>
     </div>
 
-    <% unless @user.new_record? %>
     <div class="mb-3 row">
         <div class="col-sm-2 col-form-label">
         <%= f.label :old_password %>
