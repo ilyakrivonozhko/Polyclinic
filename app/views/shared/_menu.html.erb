@@ -12,6 +12,9 @@
           <% elsif policy(:window).index? %>
             <li><%= nav_tab 'Windows', user_windows_path(current_user), class: 'nav-link px-2', current_page: current_page %></li>
           <% end %>
+          <% if policy(:appointment).index? %>
+            <li><%= nav_tab 'Appointments', user_appointments_path(current_user), class: 'nav-link px-2', current_page: current_page %></li>
+          <% end %>
         </ul>
 
         <ul class="nav col-12 col-lg-auto mb-2 mb-md-0">

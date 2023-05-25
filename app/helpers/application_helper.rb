@@ -37,4 +37,15 @@ module ApplicationHelper
     end
     res
   end
+
+  def get_windows
+    res = []
+    Window.all.each do |w|
+      if Appointment.where(window_id: w.id).count == 0
+        title = w.user.full_name+" "+(w.datetime.to_s)
+        res.push [title, w.id]
+      end
+    end
+    res
+  end
 end

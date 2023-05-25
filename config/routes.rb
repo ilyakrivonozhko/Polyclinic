@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[new create edit update] do
     resources :windows, only: %i[index create destroy]
+    resources :appointments, only: %i[index create destroy]
   end
   resource :session, only: %i[new create destroy]
 

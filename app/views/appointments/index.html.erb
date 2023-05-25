@@ -1,0 +1,36 @@
+<% provide :page_title, 'Appointments' %>
+<% currently_at 'Appointments' %>
+
+<h1 class="mb-4">New appointment</h1>
+
+<%= render 'shared/errors', object: @appointment %>
+
+<%= form_with model: [@user, @appointment] do |f| %>
+    <div class="mb-3 row">
+        <div class="col-sm-2 col-form-label">
+        <%= f.label :window_id %>
+        </div>
+
+        <div class="col-sm-10">
+        <%= f.select :window_id, get_windows, {}, class: 'form-select form-select-lg' %>
+        </div>
+    </div>
+
+    <%= f.submit "Create!", class: 'btn btn-primary btn-lg' %>
+<% end %>
+
+<h1 class="my-4 ">My appointments</h1>
+
+<% @appointments.each do |appointment| %>
+  <article class="card my-3">
+    <div class="card-body">
+      <h4><%= appointment.window.user.full_name %></h4>
+      <h4><%= appointment.window.datetime %></h4>
+      <%= link_to 'Destroy', user_appointment_path(@user, appointment), class: 'btn btn-danger',
+        data: {method: :delete, confirm: 'Are you sure?'} %>
+    </div>
+  </article>
+<% end %>
+
+
+

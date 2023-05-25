@@ -20,6 +20,7 @@ class User < ApplicationRecord
   validates :password_digest, presence: true
 
   has_many :windows, dependent: :destroy
+  has_many :appointments, dependent: :destroy  
 
   def full_name
     name + " " + patronymic + " " + surname

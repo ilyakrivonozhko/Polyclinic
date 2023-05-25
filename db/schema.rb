@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_25_164556) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_25_173125) do
+  create_table "appointments", force: :cascade do |t|
+    t.integer "window_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_appointments_on_user_id"
+    t.index ["window_id"], name: "index_appointments_on_window_id", unique: true
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "name"
@@ -35,5 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_25_164556) do
     t.index ["user_id"], name: "index_windows_on_user_id"
   end
 
+  add_foreign_key "appointments", "users"
+  add_foreign_key "appointments", "windows"
   add_foreign_key "windows", "users"
 end
