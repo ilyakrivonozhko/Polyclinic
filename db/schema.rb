@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_23_063552) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_25_035258) do
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "name"
@@ -27,4 +27,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_23_063552) do
     t.index ["role"], name: "index_users_on_role"
   end
 
+  create_table "windows", force: :cascade do |t|
+    t.datetime "datetime", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_windows_on_user_id"
+  end
+
+  add_foreign_key "windows", "users"
 end

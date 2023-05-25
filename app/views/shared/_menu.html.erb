@@ -22,6 +22,21 @@
                     class: 'dropdown-item' %>
                 </li>
                 <li><hr class="dropdown-divider"></li>
+
+                <% if policy([:admin, :window]).index? %>
+                  <li>
+                    <%= link_to 'Windows', admin_user_windows_path(current_user),
+                      class: 'dropdown-item' %>
+                  </li>
+                  <li><hr class="dropdown-divider"></li>
+                <% elsif policy(:window).index? %>
+                  <li>
+                    <%= link_to 'Windows', user_windows_path(current_user),
+                      class: 'dropdown-item' %>
+                  </li>
+                  <li><hr class="dropdown-divider"></li>
+                <% end %>
+
                 <li>
                   <%= link_to 'Log Out', session_path,
                     class: 'dropdown-item', data: {method: :delete} %>
