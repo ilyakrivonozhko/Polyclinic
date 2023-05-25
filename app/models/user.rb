@@ -19,6 +19,12 @@ class User < ApplicationRecord
   validates :role, presence: true
   validates :password_digest, presence: true
 
+  has_many :windows, dependent: :destroy
+
+  def full_name
+    name + " " + patronymic + " " + surname
+  end
+  
   def remember_me
     self.remember_token = SecureRandom.urlsafe_base64
     # rubocop:disable Rails/SkipsModelValidations
