@@ -27,14 +27,4 @@ module ApplicationHelper
       base_title
     end
   end
-
-  def get_doctors
-    res = []
-    User.all.each do |u|
-      if u.medic_role?
-        res.push [u.full_name, u.id]
-      end
-    end
-    res
-  end
 end

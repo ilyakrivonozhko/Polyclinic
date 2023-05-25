@@ -6,15 +6,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'pages#index'
 
-  resources :users, only: %i[new edit update] do
-    resources :windows, only: %i[index create destroy]
-  end
-
+  resources :users, only: %i[new create edit update]
   resource :session, only: %i[new create destroy]
 
   namespace :admin do 
-    resources :users, only: %i[index edit update destroy] do # new create
-      resources :windows, only: %i[index create destroy]
-    end
+    resources :users, only: %i[index edit update destroy] # new create
   end
 end

@@ -4,8 +4,8 @@ module Authorization
   extend ActiveSupport::Concern
 
   included do
-    include Pundit::Authorization
-    
+    include Pundit
+
     rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
     private
