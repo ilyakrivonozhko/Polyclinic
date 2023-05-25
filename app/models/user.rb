@@ -33,6 +33,10 @@ class User < ApplicationRecord
     self.remember_token = nil
   end
 
+  def guest?
+    false
+  end
+
   def remember_token_authenticated?(remember_token)
     return false if remember_token_digest.blank?
 

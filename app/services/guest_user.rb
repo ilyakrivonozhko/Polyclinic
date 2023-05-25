@@ -5,6 +5,10 @@ class GuestUser
     true
   end
 
+  def author?(_)
+    false
+  end
+
   def method_missing(name, *args, &block)
     return false if name.to_s.end_with?('_role?')
 
