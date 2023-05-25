@@ -53,7 +53,7 @@ module Admin
         end
 
         def user_params
-            params.require(:user).permit(:email, :phone_number, :name, :surname, :patronymic, :role, :password, :password_confirmation).merge(admin_edit: true)
+            params.require(:user).permit(:email, :phone_number, :name, :surname, :patronymic, :role, :password, :password_confirmation, :old_password).merge(admin_edit: true)
         end
 
         def authorize_user!

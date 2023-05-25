@@ -9,7 +9,7 @@ module Admin
     end
 
     def index?
-      user.admin_role?
+      user&.admin_role?
     end
 
     def destroy?
