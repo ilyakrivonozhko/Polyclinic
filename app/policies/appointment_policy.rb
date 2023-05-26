@@ -12,7 +12,7 @@ class AppointmentPolicy<ApplicationPolicy
   end
 
   def destroy?
-    record == user || user.admin_role? || user.medic_role? || user.receptionist_role?
+    record.user == user 
   end
 
   def show?

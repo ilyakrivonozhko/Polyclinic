@@ -5,7 +5,7 @@
 
 <%= render 'shared/errors', object: @appointment %>
 
-<%= form_with model: [@user, @appointment] do |f| %>
+<%= form_with model: @appointment do |f| %>
     <div class="mb-3 row">
         <div class="col-sm-2 col-form-label">
         <%= f.label :window_id %>
@@ -26,7 +26,7 @@
     <div class="card-body">
       <h4><%= appointment.window.user.full_name %></h4>
       <h4><%= appointment.window.datetime %></h4>
-      <%= link_to 'Destroy', user_appointment_path(@user, appointment), class: 'btn btn-danger',
+      <%= link_to 'Destroy', appointment_path(appointment), class: 'btn btn-danger',
         data: {method: :delete, confirm: 'Are you sure?'} %>
     </div>
   </article>

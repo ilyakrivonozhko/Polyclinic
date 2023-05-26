@@ -13,7 +13,7 @@
             <li><%= nav_tab 'Windows', windows_path, class: 'nav-link px-2', current_page: current_page %></li>
           <% end %>
           <% if policy(:appointment).index? %>
-            <li><%= nav_tab 'Appointments', user_appointments_path(current_user), class: 'nav-link px-2', current_page: current_page %></li>
+            <li><%= nav_tab 'Appointments', appointments_path, class: 'nav-link px-2', current_page: current_page %></li>
           <% end %>
         </ul>
 
