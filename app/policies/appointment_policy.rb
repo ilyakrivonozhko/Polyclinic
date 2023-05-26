@@ -1,6 +1,6 @@
 class AppointmentPolicy<ApplicationPolicy
   def create?
-    false
+    true
   end
 
   def update?
@@ -12,7 +12,7 @@ class AppointmentPolicy<ApplicationPolicy
   end
 
   def destroy?
-    false
+    record == user || user.admin_role? || user.medic_role? || user.receptionist_role?
   end
 
   def show?

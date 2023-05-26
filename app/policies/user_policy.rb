@@ -16,6 +16,6 @@ class UserPolicy<ApplicationPolicy
   end
 
   def show?
-    record == user || user.admin_role?
+    record == user
   end
 end

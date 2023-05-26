@@ -5,7 +5,7 @@
 
 <%= render 'shared/errors', object: @window %>
 
-<%= form_with model: [:admin, @user, @window] do |f| %>
+<%= form_with model: [:admin, @window] do |f| %>
     <div class="mb-3 row">
         <div class="col-sm-2 col-form-label">
         <%= f.label :user_id, "Doctor" %>
@@ -36,7 +36,7 @@
     <div class="card-body">
       <h4><%= window.datetime %></h4>
       <h4>Doctor: <%= window.user.full_name %></h4>
-      <%= link_to 'Destroy', admin_user_window_path(window.user.id, window), class: 'btn btn-danger',
+      <%= link_to 'Destroy', admin_window_path(window), class: 'btn btn-danger',
         data: {method: :delete, confirm: 'Are you sure?'} %>
     </div>
   </article>

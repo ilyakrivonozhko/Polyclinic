@@ -1,6 +1,6 @@
 class WindowPolicy<ApplicationPolicy
   def index?
-    user.medic_role?
+    user.medic_role? 
   end
 
   def create?
@@ -12,7 +12,7 @@ class WindowPolicy<ApplicationPolicy
   end
 
   def destroy?
-    record == user 
+    record.user == user 
   end
 
   def show?
