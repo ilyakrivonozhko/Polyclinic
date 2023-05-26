@@ -6,7 +6,7 @@ module Admin
     after_action :verify_authorized
 
     def index
-      @windows = Window.order(created_at: :desc)
+      @windows = Window.order(created_at: :desc).page params[:page]
       @window = @user.windows.build
     end
 

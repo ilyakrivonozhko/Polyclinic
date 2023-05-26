@@ -51,6 +51,8 @@ gem 'activerecord-import', '~> 1.2'
 
 gem 'pundit', '~> 2.1'
 
+gem 'kaminari', '~> 1.2'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

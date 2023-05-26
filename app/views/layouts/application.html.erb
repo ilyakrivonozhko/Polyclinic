@@ -11,15 +11,21 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
+  <%= yield :main_menu %>
   <body>
-    <%= yield :main_menu %>
-
     <main class="container mt-3">
       <% flash.each do |k, v| %>
         <%= tag.div v, class: "alert alert-#{k}", role: 'alert' %>
       <% end %>
-
       <%= yield %>
     </main>
   </body>
+<!--
+  <footer class="bg-light text-center mt-3">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © <%= Time.now.year %> Copyright: 
+      <a class="text-dark" href="https://github.com/ilyakrivonozhko">@ilyakrivonozhko</a>
+    </div>
+  </footer>
+-->
 </html>

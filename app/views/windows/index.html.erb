@@ -13,7 +13,7 @@
         </div>
 
         <div class="col-sm-10">
-        <%= f.datetime_field :datetime, class: 'form-control form-control-lg', min: Date.today, max: Date.today+60  %>
+        <%= f.datetime_field :datetime, class: 'form-control form-control-lg', min: Date.today, max: Date.today+60, :required => true %>
         </div>
     </div>
 
@@ -21,7 +21,7 @@
 <% end %>
 
 <h1 class="my-4 ">My windows</h1>
-
+<%= paginate @windows %>
 <% @windows.each do |window| %>
   <article class="card my-3">
     <div class="card-body">
@@ -31,6 +31,8 @@
     </div>
   </article>
 <% end %>
+<%= paginate @windows %>
+
 
 
 

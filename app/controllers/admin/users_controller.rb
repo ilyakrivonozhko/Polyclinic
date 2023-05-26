@@ -8,7 +8,7 @@ module Admin
         def index
             respond_to do |format|
                 format.html do
-                    @users = User.order(created_at: :desc)
+                    @users = User.order(created_at: :desc).page params[:page]
                 end
                 format.zip do
                     respond_with_zipped_users

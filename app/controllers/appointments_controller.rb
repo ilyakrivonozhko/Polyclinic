@@ -6,7 +6,7 @@ class AppointmentsController < ApplicationController
   after_action :verify_authorized
 
   def index
-    @appointments = Appointment.where(user_id: @user).order(created_at: :desc) 
+    @appointments = Appointment.where(user_id: @user).order(created_at: :desc) .page params[:page]
     @appointment = @user.appointments.build
   end
 

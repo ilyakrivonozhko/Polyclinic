@@ -6,7 +6,7 @@ class WindowsController < ApplicationController
   after_action :verify_authorized
 
   def index
-    @windows = Window.where(user_id: @user).order(created_at: :desc) 
+    @windows = Window.where(user_id: @user).order(created_at: :desc).page params[:page]
     @window = @user.windows.build
   end
 

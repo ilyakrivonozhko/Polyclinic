@@ -6,10 +6,10 @@ module Admin
     after_action :verify_authorized
 
     def index
-      @my_appointments = Appointment.where(user_id: @user).order(created_at: :desc) 
-      @appointments = Appointment.order(created_at: :desc)
+      @my_appointments = Appointment.where(user_id: @user).order(created_at: :desc).page params[:page]
+      @appointments = Appointment.order(created_at: :desc).page params[:page]
       @windows = Window.where(user_id: @user).order(created_at: :desc) 
-      @appointments_to_me = Appointment.where(window_id: @windows).order(created_at: :desc)
+      @appointments_to_me = Appointment.where(window_id: @windows).order(created_at: :desc).page params[:page]
       @appointment = @user.appointments.build
     end
 

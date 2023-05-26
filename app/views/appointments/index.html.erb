@@ -12,7 +12,7 @@
         </div>
 
         <div class="col-sm-10">
-        <%= f.select :window_id, get_windows, {}, class: 'form-select form-select-lg' %>
+        <%= f.select :window_id, get_windows, {}, class: 'form-select form-select-lg', :required => true, :placeholder => 'Choose a doctor' %>
         </div>
     </div>
 
@@ -20,7 +20,7 @@
 <% end %>
 
 <h1 class="my-4 ">My appointments</h1>
-
+<%= paginate @appointments %>
 <% @appointments.each do |appointment| %>
   <article class="card my-3">
     <div class="card-body">
@@ -31,6 +31,4 @@
     </div>
   </article>
 <% end %>
-
-
-
+<%= paginate @appointments %>
