@@ -1,7 +1,7 @@
 module Admin
   class WindowsController < BaseController
     before_action :require_authentication
-    before_action :set_user!, only: %i[index]
+    before_action :set_user!
     before_action :authorize_window!
     after_action :verify_authorized
 

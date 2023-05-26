@@ -48,4 +48,12 @@ module ApplicationHelper
     end
     res
   end
+
+  def get_users
+    res = []
+    User.all.each do |u|
+      res.push [u.full_name, u.id]
+    end
+    res
+  end
 end

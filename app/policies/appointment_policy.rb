@@ -1,6 +1,6 @@
 class AppointmentPolicy<ApplicationPolicy
   def create?
-    true
+    user.basic_role?
   end
 
   def update?
@@ -8,7 +8,7 @@ class AppointmentPolicy<ApplicationPolicy
   end
 
   def index?
-    !user.guest?
+    user.basic_role?
   end
 
   def destroy?
